@@ -1,0 +1,381 @@
+/* Area Header */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.header{
+width:100%;
+background:#fff;
+border-bottom:1px solid #ddd;
+position:fixed;
+top:0;
+left:0;
+z-index:2000;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 20px;
+}
+
+.logo img{
+height:40px;
+}
+
+.nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+width:28px;
+height:3px;
+background:#333;
+display:block;
+transition:0.3s;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.45);
+
+opacity:0;
+visibility:hidden;
+
+transition:0.3s;
+
+z-index:1000;
+}
+
+.overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+/* Responsivo Mobile */
+
+@media (max-width: 768px){
+
+.nav{
+border-top:1px solid #eee;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+z-index:1500;
+
+max-height:0;
+overflow:hidden;
+
+transition:max-height 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.nav ul{
+flex-direction:column;
+padding:20px;
+gap:15px;
+}
+
+.nav.active{
+max-height:300px;
+box-shadow:0 8px 15px rgba(0,0,0,0.15);
+}
+
+.menu-toggle{
+display:flex;
+}
+
+
+.menu-toggle.active span:nth-child(1){
+transform:rotate(45deg) translate(5px,5px);
+}
+
+.menu-toggle.active span:nth-child(2){
+opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+transform:rotate(-45deg) translate(6px,-6px);
+}
+
+}
+/* Fim responsivo Mobile */
+
+/* Animação Header */
+
+.header{
+width:100%;
+background:#fff;
+border-bottom:1px solid #eee;
+position:fixed;
+top:0;
+left:0;
+z-index:2000;
+transition:all 0.3s ease;
+}
+
+.header.scrolled{
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+padding:10px 0;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Fim animação header */
+
+/* Fim da Area Header */
+
+/* Hover Botão */
+
+.btn-contato{
+background:#0077ff;
+color:white;
+padding:10px 18px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:all 0.3s ease;
+}
+
+.btn-contato:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Fim do Hover Botão */
+
+/* Hover Menu */
+
+.nav a{
+position:relative;
+}
+
+.nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0;
+height:2px;
+background:#0077ff;
+transition:0.3s;
+}
+
+.nav a:hover::after{
+width:100%;
+}
+
+/* Fim do Hover Botão */
+
+/* Banner */
+
+.banner{
+margin-top:70px;
+height:70vh;
+background:url("https://placehold.co/1600x900") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+position:relative;
+}
+
+.banner::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+}
+
+.banner-content{
+position:relative;
+z-index:2;
+max-width:700px;
+}
+
+.banner h1{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.banner p{
+margin-bottom:20px;
+}
+
+.banner-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 28px;
+
+background:#0077ff;
+color:white;
+
+text-decoration:none;
+font-weight:600;
+
+border-radius:6px;
+
+transition:0.3s;
+}
+
+.banner-btn:hover{
+background:#005fcc;
+}
+
+/* Fim do Banner */
+
+/* Galeria */
+
+.galeria{
+padding:60px 20px;
+text-align:center;
+}
+
+.galeria h2{
+margin-bottom:40px;
+font-size:32px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+/* Fim da Galeria */
+
+/* Página ativa */
+.nav a.active{
+color:#0077ff;
+font-weight:600;
+}
+
+/* Fim da Página Ativa */
+
+/* Página Localização */
+
+.pagina-topo{
+padding:120px 20px 60px;
+text-align:center;
+background:#f5f5f5;
+}
+
+.pagina-topo h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.pagina-topo p{
+color:#666;
+}
+
+/* Mapa */
+
+.mapa{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+/* Fim do Mapa */
+
+
+/* Endereço */
+
+.endereco{
+max-width:800px;
+margin:auto;
+padding:40px 20px;
+text-align:center;
+}
+
+.endereco h2{
+margin-bottom:20px;
+font-size:30px;
+}
+
+.endereco p{
+margin-bottom:10px;
+line-height:1.6;
+color:#444;
+}
+/* Fim do Endereço */
+
+/* CTA Contato */
+
+.cta-contato{
+background:#0077ff;
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+.cta-contato h2{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.botao-contato{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+background:white;
+color:#0077ff;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+transition:0.3s;
+}
+
+.botao-contato:hover{
+background:#f0f0f0;
+}
+/* Fim CTA Contato */
+
+/* Fim da Página Localização */
